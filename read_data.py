@@ -100,3 +100,8 @@ import pickle
 pickle.dump(model, open("loan_model.pkl", "wb"))
 
 print("Model Saved Successfully")
+sample = X_test.iloc[[0]]
+
+prediction = model.predict(sample)
+
+print(prediction)
