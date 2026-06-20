@@ -2,7 +2,11 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-model = pickle.load(open("loan_model.pkl", "rb"))
+try:
+    model = pickle.load(open("loan_model.pkl", "rb"))
+    st.success("Model Loaded Successfully")
+except Exception as e:
+    st.error(str(e))
 
 st.title("Loan Approval Prediction")
 
